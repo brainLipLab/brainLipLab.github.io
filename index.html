@@ -168,6 +168,8 @@ p:last-child{margin-bottom:0}
 .membrane{position:relative}
 #scene{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:1;opacity:0;transition:opacity 1.4s ease}
 #scene.ready{opacity:1}
+.wait3d #bilayer > g,.wait3d #bilayer > rect{visibility:hidden}
+
 .membrane::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
   background:linear-gradient(90deg,rgba(11,19,36,.96) 0%,rgba(11,19,36,.86) 36%,rgba(11,19,36,.4) 53%,rgba(11,19,36,0) 66%)}
 @media (max-width:40rem){.membrane::after{display:none}#scene{top:auto;height:230px}}
@@ -373,6 +375,11 @@ p:last-child{margin-bottom:0}
   "three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
   "three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
 }}
+</script>
+<script>
+/* While the 3D header loads, keep the 2D drawing hidden; show it only if WebGL never becomes ready. */
+document.documentElement.classList.add('wait3d');
+setTimeout(function(){var c=document.getElementById('scene');if(!c||!c.classList.contains('ready'))document.documentElement.classList.remove('wait3d');},7000);
 </script>
 </head>
 <body>
@@ -1215,7 +1222,7 @@ function grooveAt(i, j, y, inset = 0.15) {
 /* =================== HERO =================== */
 (function hero() {
   const canvas = document.getElementById('scene'), host = document.getElementById('hero3d');
-  let r; try { r = makeRenderer(canvas); } catch (e) { return; }
+  let r; try { r = makeRenderer(canvas); } catch (e) { document.documentElement.classList.remove('wait3d'); return; }
   const scene = new THREE.Scene(); scene.background = new THREE.Color(NIGHT); scene.fog = new THREE.FogExp2(NIGHT, 0.022);
   lights(scene, r, true);
   const camera = new THREE.PerspectiveCamera(30, 1, 0.1, 200);
