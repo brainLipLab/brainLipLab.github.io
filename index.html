@@ -319,6 +319,10 @@ p:last-child{margin-bottom:0}
 .foot-in{display:flex;gap:1.5rem;flex-wrap:wrap;align-items:center}
 .foot a{color:var(--ink-2);text-decoration:none;border-bottom:1px solid transparent}
 .foot a:hover,.foot a:focus-visible{border-bottom-color:var(--accent)}
+.foot-logos{display:flex;align-items:center;gap:.75rem}
+.foot .foot-logo{display:flex;align-items:center;background:#fff;border-radius:3px;padding:.4rem .6rem;border:0;box-shadow:0 0 0 1px var(--rule)}
+.foot .foot-logo:hover{box-shadow:0 0 0 1px var(--accent)}
+.foot-logo img{height:34px;width:auto;display:block}
 .foot-links{margin-left:auto;display:flex;gap:1.25rem;flex-wrap:wrap}
 
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:1px}
@@ -719,6 +723,10 @@ setTimeout(function(){var c=document.getElementById('scene');if(!c||!c.classList
 
 <footer class="foot">
   <div class="wrap foot-in">
+    <span class="foot-logos">
+      <a class="foot-logo" href="https://www.csic.es/" aria-label="CSIC"><img src="logos/csic.png" alt="CSIC – Consejo Superior de Investigaciones Científicas" width="626" height="160"></a>
+      <a class="foot-logo" href="https://www.iqac.csic.es/en/" aria-label="IQAC"><img src="logos/iqac.svg" alt="IQAC – Institute for Advanced Chemistry of Catalonia" width="414" height="158"></a>
+    </span>
     <span>Brain Signaling &amp; Neurolipids Lab</span>
     <span class="foot-links">
       <a href="https://www.iqac.csic.es/en/personal/ramon-guixa-gonzalez/">IQAC-CSIC profile</a>
