@@ -301,7 +301,7 @@ p:last-child{margin-bottom:0}
 @media (max-width:55.99rem){.fig-head{max-width:20rem}}
 
 /* ---------- funding ---------- */
-.funding{border-top:1px solid var(--rule);padding:2.5rem 0 0.5rem}
+.funding{border-top:1px solid var(--rule);padding:2.5rem 0 2rem}
 .funding-in{display:flex;flex-wrap:wrap;gap:1.5rem 2.5rem;align-items:center}
 .funding-label{font-family:var(--sans);font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-3);flex-basis:100%}
 .logos{display:flex;flex-wrap:wrap;gap:1rem 2rem;align-items:center}
@@ -715,16 +715,20 @@ setTimeout(function(){var c=document.getElementById('scene');if(!c||!c.classList
 
 </main>
 
-<footer class="foot">
-  <div class="wrap">
-    <div class="foot-row">
-      <span class="foot-logos">
-        <a class="foot-logo" href="https://www.csic.es/" aria-label="CSIC"><img src="logos/csic.png" alt="CSIC – Consejo Superior de Investigaciones Científicas" width="626" height="160"></a>
-        <a class="foot-logo" href="https://www.iqac.csic.es/en/" aria-label="IQAC"><img src="logos/iqac.svg" alt="IQAC – Institute for Advanced Chemistry of Catalonia" width="414" height="158"></a>
-      </span>
-      <span class="foot-logo foot-fund"><img src="logos/miciu-fse-aei.png" alt="Ministerio de Ciencia, Innovación y Universidades · Unión Europea, Fondo Social Europeo · Agencia Estatal de Investigación" width="781" height="150"></span>
+<section class="funding" aria-label="Funding">
+  <div class="wrap funding-in">
+    <div class="funding-label">Funding</div>
+    <div class="logos">
+      <div class="logo-plate"><img src="logos/miciu-fse-aei.png" alt="Ministerio de Ciencia, Innovación y Universidades · Unión Europea, Fondo Social Europeo · Agencia Estatal de Investigación" width="781" height="150"></div>
     </div>
-    <p class="foot-ack">Ramón y Cajal fellowship RYC2022-037062-I, funded by MCIN/AEI/10.13039/501100011033 and by ESF+. Project PID2025-168430NA-I00, funded by MICIU/AEI/10.13039/501100011033.</p>
+    <p class="funding-text">Ramón y Cajal fellowship RYC2022-037062-I, funded by MCIN/AEI/10.13039/501100011033 and by ESF+. Project PID2025-168430NA-I00, funded by MICIU/AEI/10.13039/501100011033.</p>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap foot-row">
+    <a class="foot-logo" href="https://www.csic.es/" aria-label="CSIC"><img src="logos/csic.png" alt="CSIC – Consejo Superior de Investigaciones Científicas" width="626" height="160"></a>
+    <a class="foot-logo" href="https://www.iqac.csic.es/en/" aria-label="IQAC"><img src="logos/iqac.svg" alt="IQAC – Institute for Advanced Chemistry of Catalonia" width="414" height="158"></a>
   </div>
 </footer>
 
