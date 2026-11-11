@@ -381,8 +381,8 @@ p:last-child{margin-bottom:0}
 </style>
 <script type="importmap">
 {"imports":{
-  "three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
-  "three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+  "three":"./vendor/three/three.module.min.js",
+  "three/addons/":"./vendor/three/addons/"
 }}
 </script>
 <script>
@@ -1270,7 +1270,7 @@ function grooveAt(i, j, y, inset = 0.15) {
     uTime.value = t; fx.uniforms.uTime.value = t; GT.value = t;
     if (!REDUCED) sol.userData.tick(t);
     composer.render();
-    canvas.classList.add('ready');
+    if (!canvas.classList.contains('ready')) { canvas.classList.add('ready'); document.documentElement.classList.add('wait3d'); }
     if (!REDUCED) requestAnimationFrame(frame);
   }
   requestAnimationFrame(frame);
